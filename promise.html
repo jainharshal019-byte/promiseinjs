@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function prom1(taskdone){
+            return new Promise(function (resolve, reject){
+                setTimeout(() => {
+                            if (taskdone){
+                resolve("Task done....");
+            }
+            else{
+                reject("Task reject......");
+            }
+                }, 3000);
+
+    
+        });
+        }
+        let onsuccess=(result)=>{
+            console.log(result);            
+        }
+        let onfailed=(fail)=>{
+            console.log(fail);
+        }
+        prom1(true).then(onsuccess).catch(onfailed);         
+        
+    </script>
+</body>
+</html>

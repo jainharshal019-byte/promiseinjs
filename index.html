@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let p1=new Promise((resolve,reject)=>{
+        setTimeout(() => {
+            console.log('1st number');
+            resolve(29); 
+        }, 2000);
+       })  
+        let p2=new Promise((resolve,reject)=>{
+        setTimeout(() => {
+            console.log('2nd number');
+            resolve(23); 
+        }, 2000);
+       })  
+        let p3=new Promise((resolve,reject)=>{
+        setTimeout(() => {
+            console.log('3rd number');
+            resolve(22); 
+        }, 2000);
+       })  
+        let p4=new Promise((resolve,reject)=>{
+        setTimeout(() => {
+            console.log('4th number');
+            resolve(20); 
+        }, 2000);
+       })
+       Promise.all([p1,p2,p3]).then((result)=>{
+        console.log(result);
+        
+       })
+       .catch((error)=>{
+        console.log(error); 
+       })
+    </script>
+</body>
+</html>
